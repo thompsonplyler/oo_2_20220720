@@ -40,3 +40,4 @@
 - .nil?
 - strftime
   - [For a Good Striftime](https://www.foragoodstrftime.com/)
+- Inheritance
