@@ -32,3 +32,11 @@
 ### Vocabulary
 
 - class methods
+- shovel
+- instructional syntax for instance method `#method`
+- instructional syntax for class method `.method`
+- Time.now
+- private methods
+- .nil?
+- strftime
+  - [For a Good Striftime](https://www.foragoodstrftime.com/)
