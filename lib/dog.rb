@@ -17,7 +17,7 @@ class Dog
       @@all
   end
 
-  attr_accessor :name, :age, :breed, :image_url, :last_walked_at, :last_fed_at
+  attr_accessor :name, :age, :breed, :image_url, :last_walked, :last_fed
   def initialize(attributes = {})
     attributes.each { |attr, value| self.send("#{attr}=", value) }
   end
@@ -49,8 +49,8 @@ class Dog
       puts "Age: #{self.age}"
       puts "Breed: #{self.breed}"
       puts "Image URL: #{self.image_url}"
-      puts "Last walked: #{self.last_walked_at}"
-      puts "Last fed: #{self.last_fed_at}"
+      puts "Last walked: #{self.last_walked}"
+      puts "Last fed: #{self.last_fed}"
     end
 
     def print_f # without formatted name
@@ -58,16 +58,16 @@ class Dog
       puts "Age: #{self.age}"
       puts "Breed: #{self.breed}"
       puts "Image URL: #{self.image_url}"
-      puts "Last walked: #{format_time(self.last_walked_at)}"
-      puts "Last fed: #{format_time(self.last_fed_at)}"
+      puts "Last walked: #{format_time(self.last_walked)}"
+      puts "Last fed: #{format_time(self.last_fed)}"
     end
 
 
 
   private 
   
-  # ✅ 8. private method #formatted name
-  # returns the name of the dog color-coded to indicate whether they are hungry or need a walk. 
+  # ✅ 8. private method #formatted_name
+  # returns the name of the dog to indicate whether they are hungry or need a walk. 
 
   def formatted_name
     if self.last_fed_at.nil? && self.last_walked_at.nil?
@@ -81,6 +81,8 @@ class Dog
     end
   end
 
+  # ✅ 9. private method #formatted_time
+  # returns a human readable version of the timn
   def format_time time
     time.strftime('%e %b %Y %H:%M:%S%p')
   end

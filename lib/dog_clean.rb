@@ -9,14 +9,14 @@ require_relative './savable.rb'
 
 class Dog < Savable
 
-    attr_accessor :name, :age, :breed, :image_url, :last_walked_at, :last_fed_at
+    attr_accessor :name, :age, :breed, :image_url, :last_walked, :last_fed
 
     def walk
-    @last_walked_at = Time.now
+    @last_walked = Time.now
     end
 
     def feed
-    @last_fed_at = Time.now
+    @last_fed = Time.now
     end
 
     def print
@@ -24,18 +24,18 @@ class Dog < Savable
         puts "Age: #{self.age}"
         puts "Breed: #{self.breed}"
         puts "Image URL: #{self.image_url}"
-        puts "Last walked: #{format_time(self.last_walked_at)}"
-        puts "Last fed: #{format_time(self.last_fed_at)}"
+        puts "Last walked: #{format_time(self.last_walked)}"
+        puts "Last fed: #{format_time(self.last_fed)}"
     end
 
     private 
   
     def formatted_name
-    if self.last_fed_at.nil? && self.last_walked_at.nil?
+    if self.last_fed.nil? && self.last_walked.nil?
         "#{self.name} is hungry and needs a walk."
-    elsif self.last_fed_at.nil? 
+    elsif self.last_fed.nil? 
         "#{self.name} is hungry."
-    elsif self.last_walked_at.nil?
+    elsif self.last_walked.nil?
         "#{self.name} needs a walk."
     else
         self.name
